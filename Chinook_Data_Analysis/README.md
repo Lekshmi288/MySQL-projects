@@ -1,14 +1,4 @@
-# P1 (8% of grade): SQL Analysis of the Chinook Music Store Dataset
-
-## Clarifications / fixes
-
--[2/4 2:40pm] Github Classroom join link updated. Students who already created teams, please use the following link: https://classroom.github.com/a/qtUnXczB
-
-## Parter policy for this assignment
-
-We do accept partner work on this project. If you are in a team (max two people) to finish this assignment, only one of the team members should submit their assignment. **The submitted repo should have a README file that write ALL the team members' names right at the top of the file**.
-
-## Overview
+# SQL Analysis of the Chinook Music Store Dataset
 
 In this project, you'll perform basic and advanced analysis of the Chinook database using SQL queries and functions.
 
@@ -18,95 +8,6 @@ Learning objectives:
 * perform complex joins across multiple tables
 * group and aggregate data using SQL functions
 * utilize window functions for advanced analysis
-
-Before starting, please review the [general project directions](../projects.md).
-
-You will be answering 35 questions. **We recommend getting started with the project early.**
-
-## Setting up MySQL using Docker
-
-**WARNING:** **DO NOT** forget to stop and remove the `docker` container which we are using during lecture for "IMDB dataset" analysis. Running both containers simultaneously will make your VM terribly slow. 
-
-For this project, we'll be using the `mysql` image from [dockerhub](https://hub.docker.com/search?q=mysql). You can `pull` the `mysql` image using the below command:
-
-```bash
-docker pull mysql
-```
-**Note:** if you are still using `sudo` to run `docker` commands, please follow the steps here:
-https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
-(don't go beyond the "Manage Docker as a non-root user" section).
-
-Then, launch a docker container running MySQL server using this command:
-
-```bash
-docker run --name <container-name> -d -p 127.0.0.1:3306:3306 -e MYSQL_DATABASE=Chinook -e MYSQL_ROOT_PASSWORD=123456 mysql
-```
-
-Now start a new program (`bash`) in the existing docker container using the below docker command:
-
-```bash
-docker exec -it <container-name> bash
-```
-You can use this session for your experimentation of the database.
-
-## Setting up `jupyter` on your VM
-
-In a new terminal / powershell window, open another ssh session to your VM. Create a new directory (*in your home directory*) to keep track of your p1 files (of course don't forget to `cd` into it). Feel free to accept [github classroom invite](https://classroom.github.com/a/qtUnXczB), clone your repository and directory used that directory instead.
-
-If you haven't already installed these packages on your VM, make sure to complete the below installations:
-```bash
-sudo apt-get update
-sudo apt-get install python3-pip wget unzip
-```
-```bash
-sudo pip3 install jupyter
-pip3 install SQLAlchemy mysql-connector-python pandas nbformat nbconvert
-```
-
-Then, launch `jupyter` using the below command
-
-```bash
-jupyter notebook
-```
-
-To access the `jupyter` session on your laptop, you must establish an `ssh` tunnel. Open a new terminal or powershell tab, then use the below command to establish your tunnel:
-
-```bash
-ssh <USER>@IP -L localhost:8888:localhost:8888
-```
-If port 8888 is occupied on your laptop, you can change the first port (source port) in the above command to a different port number.
-
-Then, create a new Notebook file (File > New > Notebook) and make sure to save it as `p1.ipynb`.
-
-## Writing code in `p1.ipynb` to set up ```Chinook``` database 
-
-1. Inside your notebook, use the appropriate `bash` command to remove `Chinook.zip` file.
-   - **Note:** During the lecture, we covered how to run bash command from inside notebook file. If required, please review lecture demo code.
-   - When you run this cell for the first time, it'll show an error "No such file or directory".
-   - But this will come in handy when you have to do "Restart Kernel and Run All Cells...". 
-2. Inside your notebook, use the appropriate `bash` command to remove all files that end with `.csv`.
-3. Inside your notebook, use the appropriate `bash` command to download zip file ```Chinook``` dataset. For the URL part, you should be using the raw URL from github: `https://github.com/CS639-Data-Management-for-Data-Science/s25/raw/main/p1/Chinook.zip`.
-4. Inside your notebook, use the appropriate `bash` command to unzip the zip file.
-6. **IMPORTANT NOTE**: Do not manually download and unzip the dataset and do not ignore the steps 1 and 2 (you'll end up with multiple copies of the dataset, thereby wasting your disk space!)
-
-### Loading ```Chinook``` database
-
-1. In a new cell, make sure to type in the necessary `import` statements.
-2. Following that, create a new cell to establish connection to your `mysql-server` using `create_engine` function from `sqlalchemy` module.
-3. Then use load the content of each `csv` file into the database.
-   * **IMPORTANT NOTE**: Your database table name must match with each csv file name (including the case).
-   * There is an efficient way to load all the csv files without having to type each csv file's name.
-   * If you are not familiar with the `os` module `listdir` function, please look it up.
-   * You can use a combination of string methods and the `os` module to load all csv files without having to type individual files names.
-  
-## Running the Autograder
-Download `autograder.py` and `answers.zip`, in the same dir as your solution notebook. 
-
-Then run:
-> python3 autograder.py
-
-If your notebook is not named p1.ipynb, you can run:
-> python3 autograder.py -nb `<YOUR-NOTEBOOK-NAME>`
 
 ## Section 1: Basic SQL commands (14 questions)
 
@@ -370,9 +271,4 @@ Window functions allow you to perform calculations across a set of rows related 
 
 **Requirements:** 
 * Your results must include the month `Month`, corresponding month's total sales `MonthlySales`, and corresponding month's moving average sales `MovingAverageSales`.
-* Your results should be ordered by ascending order of the months.
 
-
-## Submission
-
-**Github Classroom Invitation Link: https://classroom.github.com/a/qtUnXczB**
