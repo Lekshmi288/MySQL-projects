@@ -23,27 +23,9 @@ We would recommend you to explore all the tables by using appropriate SQL querie
 
 #### Q1: Retrieve all information about the artist "Queen" from the Artist table.
 
-Each question's resultant `pandas DataFrame` must be stored into a file called `q\<N\>.pkl`, where `N` refers to the question number. For example, store q1's results using the below code:
-
-```
-q1_df = pd.read_sql(...)
-q1_df.to_pickle("q1.pkl")
-```
-Make sure to go back to the cell containing import statements and include `import pickle`.
-
-For your personal verification, you can display the output of the `pandas DataFrame` as well.
-
 #### Q2: What are all the albums released by the artist "Queen"?
 
-Your SQL query answering this question should be self-sufficient - that is, you should not be hardcoding the `ArtistId` that you determined from the previous question. **Harcoding will make you lose points during manual TA review**.
-
-**Requirement:** Use subquery to answer this question and other questions in section 1. We'll have an entire section dedicated to joins.
-
 #### Q3: What are all the tracks released by the artist "Queen"? 
-
-Again, we expect your SQL query to be self-sufficient. **Do not hardcode** any of the identifiers. If you hardcoded the `ArtistID` for the previous question, now would be the time for you to go back and fix it. **Harcoding will make you lose points during manual TA review**.
-
-**Requirement:** Use subquery to answer this question and other questions in section 1. We'll have an entire section dedicated to joins.
 
 #### Q4: How many tracks released by "Queen" were composed or co-composed by "Queen"?
 
@@ -56,10 +38,6 @@ Again, we expect your SQL query to be self-sufficient. **Do not hardcode** any o
 #### Q6: Which are the top 5 longest tracks by the artist "Queen"?
 
 #### Q7: What are all the tracks by the artist "Queen" that are sized smaller than 6MB?
-
-1000000 bytes = 1 MB
-
-Wasn't it a pain to read the relevant results from the last two queries? How about we make this data more human readable for the next question?
 
 #### Q8: Generate human-readable details about all tracks released by "Queen".
 
@@ -78,8 +56,6 @@ Let's now explore the customers to see if there is some trend.
 #### Q11: Which invoices were issued in the year 2021?
 
 #### Q12: What was the total expenditure of "Eduardo Martins"?
-
-**Requirement:** It is acceptable to hardcode first and the last name here. But it is not acceptable to hardcode customer id.
 
 #### Q13: Which customers from the USA do not have any specified company information?
 
