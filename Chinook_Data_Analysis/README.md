@@ -1,6 +1,6 @@
 # SQL Analysis of the Chinook Music Store Dataset
 
-In this project, you'll perform basic and advanced analysis of the Chinook database using SQL queries and functions.
+In this project, I perform basic and advanced analysis of the Chinook database using SQL queries and functions.
 
 Learning objectives:
 * setup a docker container with mysql server
